@@ -176,7 +176,6 @@ print(namesWithMoreThanFourLetters)
 /*:
  ### Using reduce
  */
-
 let combinedNames = namesWithMoreThanFourLetters.reduce("") {
     return $0 + $1
 }
