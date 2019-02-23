@@ -19,3 +19,24 @@ let textMessage = Message.text(userID: "2", contents: "Hello World!", date: Date
 
 logMessage(message: joinMessage)
 logMessage(message: textMessage)
+
+// ------------------------------------
+
+enum DateType {
+    case today(Date)
+    case dateRange(Range<Date>)
+}
+
+let now = Date()
+let hourFromNow = Date(timeIntervalSinceNow: 3600)
+let dates: [DateType] = [
+                            DateType.today(now),
+                            DateType.dateRange(now ..< hourFromNow)
+                        ]
+
+for dateType in dates {
+    switch dateType {
+        case .today(let date): print("Date is: \(date)")
+        case .dateRange(let range): print("Range is: \(range)")
+    }
+}
